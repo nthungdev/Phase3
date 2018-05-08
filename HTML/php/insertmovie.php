@@ -35,6 +35,7 @@ $genre = $_POST['genre'];
 $mpaa = $_POST['mpaa'];
 $studio = $_POST['studio'];
 
+$mysql = 
 
 // Print the submitted information:
 if ( !empty($title) && !empty($release_year) && !empty($lang) 
@@ -45,8 +46,7 @@ if ( !empty($title) && !empty($release_year) && !empty($lang)
         <p>The language is {$lang} </p>
         <p>The description is {$description} </p>
         <p>The genre are {$genre[0]} and {$genre[1]} </p>
-        <p>The mpaa rating is {$mpaa} </p>
-        <p>$casted";
+        <p>The mpaa rating is {$mpaa} </p>";
     
 } else { // Missing form value.
 	echo '<p>Please go back and fill out the form again.</p>';
