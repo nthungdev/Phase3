@@ -8,7 +8,7 @@
 
 <body align="center">
 <!-- Script 2.1 - form.html -->
-	<form action="handle_form.php" method="post">
+	<form action="php/inserttheme.php" method="post">
 	<picture>
 		<img src="images/logo.png" alt="Marvel Cinematic Universe" style="width:500px;height:112px;">
 	</picture>
@@ -26,7 +26,7 @@
 	
 	<fieldset align="center">
 		<legend>Enter the Soundtrack</legend>
-		<p><label>Track Name: <input type="text" name="track_name" size="20" maxlength="255"></label></p>
+		<p><label>Track Name: <input type="text" name="track_name" size="20" placeholder="Ex: Iron Man (2008 Version)" maxlength="255"></label></p>
 		<p><label>Released Year:
 		<select name="release_year">
 			<option value="2000">2000</option> <option value="2001">2001</option> <option value="2002">2002</option>
@@ -37,10 +37,10 @@
 			<option value="2015">2015</option> <option value="2016">2016</option> <option value="2017">2017</option>
 			<option value="2018">2018</option> <option value="2019">2019</option> <option value="2020">2020</option>
 		</select></label></p>
-		<p><label>Number (No.): <input type="number" name="num" size="10"></label></p>
-		<p><label>Composer: <input type="text" name="composer" size="20" maxlength="255"></label></p>
-		<p><label>Length: <input type="number" name="length" size="20"></label></p>
-		<p><label>Album: <input type="text" name="album" size="20" maxlength="255"></label></p>
+		<p><label>Number (No.): <input type="number" name="num" placeholder="Ex: 01" size="10"></label></p>
+		<p><label>Composer: <input type="text" name="composer" size="20" placeholder="Ex: Rick Boston/John O'Brien" maxlength="255"></label></p>
+		<p><label>Length: <input type="number" name="length" placeholder="In Second" size="20"></label></p>
+		<p><label>Album: <input type="text" name="album" size="20" placeholder="Ex: Iron Man" maxlength="255"></label></p>
 	</fieldset>
 	<p><input type="submit" name="submit" value="Insert a Soundtrack"></p>
 
