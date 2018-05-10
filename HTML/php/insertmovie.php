@@ -8,7 +8,7 @@
 <?php 
 //require('mysqli_connect.php');
 
-$link = @mysqli_connect("localhost", "341group03", "1182E0", "db03");
+$link = @mysqli_connect("localhost", "capmarvel", "thanoswilldie", "mcu");
 mysqli_set_charset($link, 'utf8');
 
 
