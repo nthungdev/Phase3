@@ -8,7 +8,7 @@
 <?php 
 //require('mysqli_connect.php');
 
-$link = @mysqli_connect("localhost", "capmarvel", "thanoswilldie", "mcu");
+$link = @mysqli_connect("localhost", "341group03", "1182E0", "db03");
 mysqli_set_charset($link, 'utf8');
 
 
@@ -24,12 +24,12 @@ $lang = $_POST['language'];
 $description = $_POST['description'];
 $rating = $_POST['rating'];
 $revenue = $_POST['revenue'];
-$genre = $_POST['genre'];
+$genre = implode(',', $_POST['genre']);
 $mpaa = $_POST['mpaa'];
 $studio = $_POST['studio'];
 
 $mysql = "INSERT INTO Movie (title, release_year, length, budget, lang, description, rating, revenue, genre, mpaa, studio)
-VALUES ('$title', '$release_year', '$length', '$budget', '$lang', '$description', '$rating', '$revenue', '$genre', '$mpaa', '$studio')";
+VALUES ('$title', '$release_year', '$length', '$budget', '$lang', '$description', '$rating', '$revenue', '" . $genre . "', '$mpaa', '$studio')";
 
 
 if (mysqli_query($link, $mysql)){
