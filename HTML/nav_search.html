@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Marvel Cinematic Universe</title>
+	<link rel="stylesheet" href="stylesheet-mcu.css">
+</head>
+
+<body align="center">
+	<form action="handle_form.php" method="post">
+	<picture>
+		<img src="images/logo.png" alt="Marvel Cinematic Universe" style="width:500px;height:112px;">
+	</picture>
+	<hr>
+	<div id="nav">
+	<ul>
+		<li><a href="index.html">Marvel Cinematic Universe</a></li>
+		<li id="here"><a href="nav_search.html">Search</a></li>
+		<li><a href="nav_insert.html">Insert</a></li>
+		<li><a href="nav_update.html">Update</a></li>
+		<li><a href="nav_delete.html">Delete</a></li>
+	</ul>
+	</div>
+	<hr>
+	<fieldset align="center">
+	<div id="left">
+	<ul>
+		<!-- list all the movies/person/location/theme/superhero-->
+		<hr>
+		<p><label>Movies:
+		<select name="movies_list">
+			<!-- put all the movies in the check box by using php
+			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
+			-->
+		</select></label></p>
+		<hr>
+		<p><label>Person:
+		<select name="person_list">
+			<!-- put all the Person in the check box by using php
+			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
+			-->
+		</select></label></p>
+		<hr><p><label>Location:
+		<select name="locations_list">
+			<!-- put all the Locations in the check box by using php
+			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
+			-->
+		</select></label></p>
+		<hr><p><label>Superhero:
+		<select name="Superheros_list">
+			<!-- put all the Superheros in the check box by using php
+			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
+			-->
+		</select></label></p>
+		<hr><p><label>Theme:
+		<select name="Themes_list">
+			<!-- put all the Themes in the check box by using php
+			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
+			-->
+		</select></label></p>
+		<hr>
+		
+	</ul>
+	</fieldset>
+	</form>
+
+</body>
+</html>
