@@ -75,3 +75,4 @@ if ( !empty($title) && !empty($release_year) && !empty($lang)
 ?>
 </body>
 </html>
+

@@ -7,6 +7,15 @@
 <body>
 <?php 
 require('mysqli_connect.php');
+
+$link = @mysqli_connect("localhost", "341group03", "1182E0", "db03");
+mysqli_set_charset($link, 'utf8');
+
+
+if ($link === false){
+	die("ERROR: Could not connect" . mysqli_connect_error());
+}
+
 //$mysql = mysqli_query($dbc, 'INSERT INTO Movies VALUES(titl');
 /*
     $title = mysqli_real_escape_string($dbc, $_REQUEST['title']);
@@ -29,7 +38,16 @@ $state = $_POST['state'];
 $country = $_POST['country'];
 $city = $_POST['city'];
 
-$mysql = 
+$mysql = "INSERT INTO Location VALUES ('$loc_name', '$zip', '$state', '$country', '$city')";
+
+if (mysqli_query($link, $mysql)){
+    echo "Records added successfully.";
+}else{
+    echo "Error: Could not.." . mysql_error($link);
+}
+mysql_close($link);
+
+/*
 
 // Print the submitted information:
 if ( !empty($title) && !empty($release_year) && !empty($lang) 
@@ -44,7 +62,7 @@ if ( !empty($title) && !empty($release_year) && !empty($lang)
     
 } else { // Missing form value.
 	echo '<p>Please go back and fill out the form again.</p>';
-}
+}*/
 ?>
 </body>
 </html>
