@@ -7,54 +7,38 @@
 </head>
 
 <body align="center">
-	<form action="handle_form.php" method="post">
 	<picture>
 		<img src="images/logo.png" alt="Marvel Cinematic Universe" style="width:500px;height:112px;">
 	</picture>
 	<hr>
 	<div id="nav">
-	<ul>
-		<li><a href="index.html">Marvel Cinematic Universe</a></li>
-		<li><a href="nav_search.html">Search</a></li>
-		<li id="here"><a href="nav_insert.html">Insert</a></li>
-		<li><a href="nav_update.html">Update</a></li>
-		<li><a href="nav_delete.html">Delete</a></li>
-	</ul>
+		<ul>
+			<li><a href="index.html">Marvel Cinematic Universe</a></li>
+			<li><a href="nav_search.html">Search</a></li>
+			<li id="here"><a href="nav_insert.html">Insert</a></li>
+			<li><a href="nav_update.html">Update</a></li>
+			<li><a href="nav_delete.html">Delete</a></li>
+		</ul>
 	</div>
 	<hr>
 	<fieldset align="center">
+	<legend align="center">Select a Table to Insert</legend>
 	<div id="left">
 	<ul>
 		<hr>
 		<p><label>Select:
-		<select name="table">
-			<!-- put all the movies in the check box by using php
-			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
-			-->
-			<option value="Movie">Movie</option>
-			<option value="Person">Person</option> 
-			<option value="Location">Location</option>
-			<option value="Superhero">Superhero</option> 
-			<option value="Theme">Theme</option>	
+		<select name="table" onchange="location = this.value;">
+			<option value="insert/movies.html">Movie</option>
+			<option value="insert/person.html">Person</option> 
+			<option value="insert/location.html">Location</option>
+			<option value="insert/superhero.html">Superhero</option> 
+			<option value="insert/theme.html">Theme</option>	
 		</select></label></p>
 		<hr>
 
-		<!--
-		<hr>
-		<li id="color"><a href="insert_html/movies.html">Insert to Movie</a></li>
-		<hr>
-		<li><a href="insert_html/person.html">Insert to Person</a></li>
-		<hr>
-		<li><a href="insert_html/location.html">Insert to Location</a></li>
-		<hr>
-		<li><a href="insert_html/theme.html">Insert to Theme</a></li>
-		<hr>
-		<li><a href="insert_html/superhero.html">Insert to Superhero</a></li>
-		<hr>-->
 	</ul>
 	</div>
 	</fieldset>
-	<p align="center"><input type="submit" name="submit" value="Next"></p>
 	</form>
 
 </body>
