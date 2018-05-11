@@ -36,9 +36,7 @@ if ($link === false){
 
 $table = $_POST['table'];
 
-$_COOKIE[$table] = $_POST['table'];
-
-setcookie($table, $_POST['table'], time() + (86400 * 30), "/");
+setcookie('tablename', $table, time() + (86400 * 30), "/");
 
 echo "<p>Selected table is $table </p>";
 
