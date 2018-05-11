@@ -8,7 +8,7 @@
 <body align="center">
 
 	<picture>
-		<img src="../images/logo.png" alt="Marvel Cinematic Universe" style="width:500px;height:112px;">
+		<img src="../images/logo.png" alt="Marvel Cinematic Universe" class="center" style="width:500px;height:112px;">
 	</picture>
 	<hr>
 	<div id="nav">

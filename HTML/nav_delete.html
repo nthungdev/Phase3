@@ -9,7 +9,7 @@
 <body align="center">
 	<form action="handle_form.php" method="post">
 	<picture>
-		<img src="images/logo.png" alt="Marvel Cinematic Universe" style="width:500px;height:112px;">
+		<img src="images/logo.png" alt="Marvel Cinematic Universe" class="center" style="width:500px;height:112px;">
 	</picture>
 	<hr>
 	<div id="nav">
@@ -29,6 +29,7 @@
 		<hr>
 		<p><label>Select:
 		<select name="table" onchange="location = this.value;">
+			<option value="None">None</option>
 			<option value="insert/movies.html">Movie</option>
 			<option value="insert/person.html">Person</option> 
 			<option value="insert/location.html">Location</option>

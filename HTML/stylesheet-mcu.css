@@ -80,3 +80,8 @@ color:#015249;
 color: #FFA55F;
 }
 
+.center{
+display:block;
+margin-left:auto;
+margin-right: auto;
+}
