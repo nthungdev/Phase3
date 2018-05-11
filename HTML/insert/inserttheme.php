@@ -13,7 +13,7 @@
 	<div id="nav">
 	<ul>
 		<li><a href="../index.html">Marvel Cinematic Universe</a></li>
-		<li id="here"><a href="../nav_search2.html">Search</a></li>
+		<li id="here"><a href="../nav_search.html">Search</a></li>
 		<li><a href="../nav_insert.html">Insert</a></li>
 		<li><a href="../nav_update.html">Update</a></li>
 		<li><a href="../nav_delete.html">Delete</a></li>
@@ -32,9 +32,6 @@ if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
 
-$table = $_POST['table'];
-echo "<p>Selected table is $table </p>";
-
 $track_name = $_POST['track_name'];
 $release_year = $_POST['release_year'];
 $num = $_POST['num'];
@@ -42,8 +39,8 @@ $composer = $_POST['composer'];
 $length = $_POST['length'];
 $album = $_POST['album'];
 
-$mysql = "INSERT INTO Location (loc_name, zip, state, country, city)
-VALUES ('$name', '$zip', '$state', '$country', '$city')";
+$mysql = "INSERT INTO Theme (track_name, release_year, num, composer, length, album)
+VALUES ('$track_name', '$release_year', '$num', '$composer', '$length', '$album')";
 
 if (mysqli_query($link, $mysql)){
     echo "Records added successfully.";

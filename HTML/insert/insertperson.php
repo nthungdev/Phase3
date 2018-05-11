@@ -13,7 +13,7 @@
 	<div id="nav">
 	<ul>
 		<li><a href="../index.html">Marvel Cinematic Universe</a></li>
-		<li id="here"><a href="../nav_search2.html">Search</a></li>
+		<li id="here"><a href="../nav_search.html">Search</a></li>
 		<li><a href="../nav_insert.html">Insert</a></li>
 		<li><a href="../nav_update.html">Update</a></li>
 		<li><a href="../nav_delete.html">Delete</a></li>
@@ -31,9 +31,6 @@ mysqli_set_charset($link, 'utf8');
 if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
-
-$table = $_POST['table'];
-echo "<p>Selected table is $table </p>";
 
 $id = $_POST['id'];
 $l_name = $_POST['l_name'];
