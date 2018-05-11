@@ -50,13 +50,13 @@ switch ($table) {
 		if (mysqli_num_rows($result) > 0) {
 		    	// output data of each row
 		    	while($row = $result->fetch_array(MYSQLI_NUM)) {
-				echo "Title: " . $row[0]. "<br>";
 				echo "<option value={$row[0]}>{$row[0]}</option>" . "<br>";
 		    	}
 		} else {
 		    	echo "Error: Could not.. " . mysql_error($link);
 		}
 		break;
+
 	case 'Person':
 		echo "<hr>
 		<p><label>Select Person:
@@ -72,6 +72,7 @@ switch ($table) {
 		    	echo "Error: Could not.. " . mysql_error($link);
 		}
 		break;
+
 	case 'Location':
 		echo "<hr>
 		<p><label>Select Location:
@@ -87,6 +88,7 @@ switch ($table) {
 		    	echo "Error: Could not.. " . mysql_error($link);
 		}
 		break;
+
 	case 'Superhero':
 		echo "<hr>
 		<p><label>Select Superhero:
@@ -102,6 +104,7 @@ switch ($table) {
 		    	echo "Error: Could not.. " . mysql_error($link);
 		}
 		break;
+
 	case 'Theme':
 		echo "<hr>
 		<p><label>Select Song:

@@ -34,23 +34,17 @@ if ($link === false){
 }
 $thistable = $_COOKIE['tablename'];
 echo "<p>Selected {$thistable} is </p>";
+$tablevaue = $_POST['$thistable']
+echo $thistable . "lalalala";
 
-switch ($table) {
+switch ($thistable) {
 	case 'Movie':
 		echo "<hr>
 		<p><label>Select Movie:
 		<select name={$table}>";
-		$query = "SELECT title FROM Movie";
+		$query = "SELECT * FROM Movie WHERE title = ";
 		$result = $link->query($query);
-		if (mysqli_num_rows($result) > 0) {
-		    	// output data of each row
-		    	while($row = $result->fetch_array(MYSQLI_NUM)) {
-				echo "Title: " . $row[0]. "<br>";
-				echo "<option value={$row[0]}>{$row[0]}</option>" . "<br>";
-		    	}
-		} else {
-		    	echo "Error: Could not.. " . mysql_error($link);
-		}
+		    	
 		break;
 	case 'Person':
 		break;
