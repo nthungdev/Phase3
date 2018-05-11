@@ -35,9 +35,18 @@ if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
 
-$table = $_POST['table'];
 
-setcookie('tablename', $table, time() + (86400 * 30), "/");
+/*
+echo $_COOKIE['table'];
+$_COOKIE['table'] = $_POST['table'];
+
+
+$_COOKIE['value'] = "";
+echo $_COOKIE['value'];
+*/
+
+$table = $_POST['table'];
+setcookie('table', $table, time() + (86400 * 30), "/");
 
 echo "<p>Selected table is $table </p>";
 
@@ -45,13 +54,14 @@ switch ($table) {
 	case 'Movie':
 		echo "<hr>
 		<p><label>Select Movie:
-		<select name={$table}";
+		<select name={$table}>";
 		$query = "SELECT title FROM Movie";
 		$result = $link->query($query);
 		if (mysqli_num_rows($result) > 0) {
 		    	// output data of each row
 		    	while($row = $result->fetch_array(MYSQLI_NUM)) {
-				echo "<option value={$row[0]}>{$row[0]}</option>" . "<br>";
+				echo "<option value='{$row[0]}'>{$row[0]}</option>" . "<br>";
+				
 		    	}
 		} else {
 		    	echo "Error: Could not.. " . mysql_error($link);
@@ -89,7 +99,6 @@ switch ($table) {
 		    	echo "Error: Could not.. " . mysql_error($link);
 		}
 		break;
-
 	case 'Superhero':
 		echo "<hr>
 		<p><label>Select Superhero:
@@ -105,7 +114,6 @@ switch ($table) {
 		    	echo "Error: Could not.. " . mysql_error($link);
 		}
 		break;
-
 	case 'Theme':
 		echo "<hr>
 		<p><label>Select Song:
@@ -127,7 +135,7 @@ switch ($table) {
 		<hr>
 	</ul>
 	</fieldset>
-	<p><input type="submit" name="Insert" value="Next"></p>
+	<p><input type="submit" name="submit" value="Next"></p>
 	</form>
 
 </body>

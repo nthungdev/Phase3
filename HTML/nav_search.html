@@ -7,7 +7,7 @@
 </head>
 
 <body align="center">
-	<form action="handle_form.php" method="post">
+	<form action="search/search.php" method="post">
 	<picture>
 		<img src="images/logo.png" alt="Marvel Cinematic Universe" style="width:500px;height:112px;">
 	</picture>
@@ -15,7 +15,7 @@
 	<div id="nav">
 	<ul>
 		<li><a href="index.html">Marvel Cinematic Universe</a></li>
-		<li id="here"><a href="nav_search.html">Search</a></li>
+		<li id="here"><a href="nav_search2.html">Search</a></li>
 		<li><a href="nav_insert.html">Insert</a></li>
 		<li><a href="nav_update.html">Update</a></li>
 		<li><a href="nav_delete.html">Delete</a></li>
@@ -27,48 +27,23 @@
 	<ul>
 		<!-- list all the movies/person/location/theme/superhero-->
 		<hr>
-		<p><label>Movies:
-		<select name="movies_list">
+		<p><label>Select:
+		<select name="table">
 			<!-- put all the movies in the check box by using php
 			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
 			-->
-			
+			<option value="Movie">Movie</option>
+			<option value="Person">Person</option> 
+			<option value="Location">Location</option>
+			<option value="Superhero">Superhero</option> 
+			<option value="Theme">Theme</option>	
 		</select></label></p>
-		require
-/*
-		<script language="php"> 
-			echo "<p> Hello World !!!! </p>";
-		</script>
-*/
-		<hr>
-		<p><label>Person:
-		<select name="person_list">
-			<!-- put all the Person in the check box by using php
-			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
-			-->
-		</select></label></p>
-		<hr><p><label>Location:
-		<select name="locations_list">
-			<!-- put all the Locations in the check box by using php
-			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
-			-->
-		</select></label></p>
-		<hr><p><label>Superhero:
-		<select name="Superheros_list">
-			<!-- put all the Superheros in the check box by using php
-			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
-			-->
-		</select></label></p>
-		<hr><p><label>Theme:
-		<select name="Themes_list">
-			<!-- put all the Themes in the check box by using php
-			https://stackoverflow.com/questions/38141695/submitting-a-multiple-checkbox-form-to-mysql-with-php
-			-->
-		</select></label></p>
+	
 		<hr>
 		
 	</ul>
 	</fieldset>
+	<p><input type="submit" name="submit" value="Next"></p>
 	</form>
 
 </body>

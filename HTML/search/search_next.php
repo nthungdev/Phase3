@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Marvel Cinematic Universe</title>
-	<link rel="stylesheet" href="stylesheet-mcu.css">
+	<link rel="stylesheet" href="../stylesheet-mcu.css">
 </head>
 <body align="center">
 
@@ -33,26 +33,33 @@ mysqli_set_charset($link, 'utf8');
 if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
-$thistable = $_COOKIE['tablename'];
-echo "<p>Selected {$thistable} is </p>";
-$tablevaue = $_POST['$thistable']
-echo $thistable . "lalalala";
+$thistable = $_COOKIE['table'];
+$selected_value = $_POST[$thistable];
+
+//echo "<p>Value is {$selected_value} </p>";
+echo "<p>Selected table is {$thistable}</p>";
 
 switch ($thistable) {
 	case 'Movie':
-		echo "<hr>
-		<p><label>Select Movie:
-		<select name={$table}>";
-		$query = "SELECT * FROM Movie WHERE title = ";
+		$query = "SELECT title FROM Movie WHERE title = '{$selected_value}'";
+		echo $query;
 		$result = $link->query($query);
-		    	
+		$row = $result->fetch_assoc();
+		echo "<p> {$selected_value} </p>";
+		
+		echo "<p> ${$row['title']}</p>";
+		echo  "<p>Title: {$row['title']} Release Year: {$row['release_year']} Length {$row['length']} Budget: {$row['budget']} Language: {$row['lang']} Description:  {$row['description']} Rating: {$row['rating']} Revenue: {$row['revenue']} Genre: {$row['genre']} MPAA: {$row['mpaa']}  Studio: {$row['studio']} </p>";
 		break;
+
 	case 'Person':
 		break;
+
 	case 'Location':
 		break;
+
 	case 'Superhero':
 		break;
+
 	case 'Theme':
 		break;
 }
