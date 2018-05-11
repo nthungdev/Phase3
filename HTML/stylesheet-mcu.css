@@ -9,6 +9,14 @@ font-weight: bold;
 color: #952E4B;	
 }
 
+table {
+border-collapse: collapse;
+}
+
+table, th, td{
+border: 1px solid black;
+}
+
 ul{
 text-align:center;
 list-style-type: none;

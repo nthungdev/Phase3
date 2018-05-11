@@ -14,7 +14,7 @@
 	<div id="nav">
 	<ul>
 		<li><a href="../index.html">Marvel Cinematic Universe</a></li>
-		<li id="here"><a href="../nav_search2.html">Search</a></li>
+		<li id="here"><a href="../nav_search.html">Search</a></li>
 		<li><a href="../nav_insert.html">Insert</a></li>
 		<li><a href="../nav_update.html">Update</a></li>
 		<li><a href="../nav_delete.html">Delete</a></li>
@@ -77,7 +77,7 @@ switch ($table) {
 		if (mysqli_num_rows($result) > 0) {
 		    	// output data of each row
 		    	while($row = $result->fetch_array(MYSQLI_NUM)) {
-				echo "<option value={$row[0]}>{$row[1]}, {$row[3]} | ID:{$row[0]}</option>" . "<br>";
+				echo "<option value='{$row[0]}'>{$row[1]}, {$row[3]} | ID:{$row[0]}</option>" . "<br>";
 		    	}
 		} else {
 		    	echo "Error: Could not.. " . mysql_error($link);
@@ -93,7 +93,7 @@ switch ($table) {
 		if (mysqli_num_rows($result) > 0) {
 		    	// output data of each row
 		    	while($row = $result->fetch_array(MYSQLI_NUM)) {
-				echo "<option value={$row[0]}>{$row[0]}</option>" . "<br>";
+				echo "<option value='{$row[0]}'>{$row[0]}</option>" . "<br>";
 		    	}
 		} else {
 		    	echo "Error: Could not.. " . mysql_error($link);
@@ -102,13 +102,13 @@ switch ($table) {
 	case 'Superhero':
 		echo "<hr>
 		<p><label>Select Superhero:
-		<select name='table'>";
+		<select name={$table}>";
 		$query = "SELECT * FROM Superhero";
 		$result = $link->query($query);
 		if (mysqli_num_rows($result) > 0) {
 		    	// output data of each row
 		    	while($row = $result->fetch_array(MYSQLI_NUM)) {
-				echo "<option value={$row[0]}>{$row[0]}</option>" . "<br>";
+				echo "<option value='{$row[0]}'>{$row[0]}</option>" . "<br>";
 		    	}
 		} else {
 		    	echo "Error: Could not.. " . mysql_error($link);
@@ -123,7 +123,7 @@ switch ($table) {
 		if (mysqli_num_rows($result) > 0) {
 		    	// output data of each row
 		    	while($row = $result->fetch_array(MYSQLI_NUM)) {
-				echo "<option value={$row[0]}>{$row[0]}</option>" . "<br>";
+				echo "<option value='{$row[0]}'>{$row[0]}</option>" . "<br>";
 		    	}
 		} else {
 		    	echo "Error: Could not.. " . mysql_error($link);
