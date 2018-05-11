@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Form Feedback</title>
+	<title>Marvel Cinematic Universe</title>
+	<link rel="stylesheet" href="../stylesheet-mcu.css">
 </head>
 <body align="center">
 	<form action="search_next.php" method="post">
@@ -126,7 +127,7 @@ switch ($table) {
 		<hr>
 	</ul>
 	</fieldset>
-	<p><input type="submit" name="submit" value="Next"></p>
+	<p><input type="submit" name="Insert" value="Next"></p>
 	</form>
 
 </body>
