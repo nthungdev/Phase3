@@ -26,7 +26,7 @@
 	<div id="left">
 	<ul>
 		<hr>
-		<p><label>Select:
+		<!--<p><label>Select:
 		<select name="table" onchange="location = this.value;">
 			<option value="None">None</option>
 			<option value="insert/movie.html">Movie</option>
@@ -35,11 +35,29 @@
 			<option value="insert/superhero.html">Superhero</option> 
 			<option value="insert/theme.html">Theme</option>	
 		</select></label></p>
+		-->
+		
+		<form action="insert/movie.html">
+		    <input type="submit" value="Movie" />
+		</form>
+
+		<form action="insert/person.html">
+		    <input type="submit" value="Person" />
+		</form>
+
+		<form action="insert/location.html">
+		    <input type="submit" value="Location" />
+		</form>
+
+		<form action="insert/superhero.html">
+		    <input type="submit" value="Superhero" />
+		</form>
+		<form action="insert/theme.html">
+		    <input type="submit" value="Theme" />
+		</form>
 		<hr>
 	</ul>
 	</div>
 	</fieldset>
-	</form>
-
 </body>
 </html>
