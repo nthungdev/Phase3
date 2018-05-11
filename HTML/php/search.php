@@ -36,15 +36,17 @@ if ($link === false){
 
 $table = $_POST['table'];
 
+$_COOKIE[$table] = $_POST['table'];
+
+setcookie($table, $_POST['table'], time() + (86400 * 30), "/");
+
 echo "<p>Selected table is $table </p>";
-
-
 
 switch ($table) {
 	case 'Movie':
 		echo "<hr>
 		<p><label>Select Movie:
-		<select name={$table}>";
+		<select name={$table}";
 		$query = "SELECT title FROM Movie";
 		$result = $link->query($query);
 		if (mysqli_num_rows($result) > 0) {
@@ -90,7 +92,7 @@ switch ($table) {
 	case 'Superhero':
 		echo "<hr>
 		<p><label>Select Superhero:
-		<select name={$table}>";
+		<select name='table'>";
 		$query = "SELECT * FROM Superhero";
 		$result = $link->query($query);
 		if (mysqli_num_rows($result) > 0) {
