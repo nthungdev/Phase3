@@ -23,13 +23,19 @@
 	</div>
 	<hr>
 	<fieldset align="center">
+	<legend align="center">Select a Table to Delete</legend>
 	<div id="left">
 	<ul>
-		<li><a href="html/movies.html">Movie Delete</a></li> <!--list the entire Movies database in one page-->
-		<li><a href="html/person.html">Person Delete</a></li> <!--list the entire Person database in one page-->
-		<li><a href="html/location.html">Location Delete</a></li> <!--list the entire Location database in one page-->
-		<li><a href="html/superhero.html">Superhero Delete</a></li> <!--list the entire Theme database in one page-->
-		<li><a href="html/theme.html">Theme Delete</a></li> <!--list the entire Superhero database in one page-->
+		<hr>
+		<p><label>Select:
+		<select name="table" onchange="location = this.value;">
+			<option value="insert/movies.html">Movie</option>
+			<option value="insert/person.html">Person</option> 
+			<option value="insert/location.html">Location</option>
+			<option value="insert/superhero.html">Superhero</option> 
+			<option value="insert/theme.html">Theme</option>	
+		</select></label></p>
+		<hr>
 	</ul>
 	</fieldset>
 	</form>
