@@ -34,23 +34,16 @@ if ($link === false){
 }
 
 $table = $_POST['table'];
-setcookie('tablename', $table, time() + (86400 * 30), "/");
 echo "<p>Selected table is $table </p>";
 
-$title = $_POST['title'];
-$release_year = $_POST['release_year'];
-$length = $_POST['length'];
-$budget = $_POST['budget'];
-$lang = $_POST['language'];
-$description = $_POST['description'];
-$rating = $_POST['rating'];
-$revenue = $_POST['revenue'];
-$genre = implode(',', $_POST['genre']);
-$mpaa = $_POST['mpaa'];
-$studio = $_POST['studio'];
+$name = $_POST['loc_name'];
+$zip = $_POST['zip'];
+$state = $_POST['state'];
+$country = $_POST['country'];
+$city = $_POST['city'];
 
-$mysql = "INSERT INTO Movie (title, release_year, length, budget, lang, description, rating, revenue, genre, mpaa, studio)
-VALUES ('$title', '$release_year', '$length', '$budget', '$lang', '$description', '$rating', '$revenue', '" . $genre . "', '$mpaa', '$studio')";
+$mysql = "INSERT INTO Location (loc_name, zip, state, country, city)
+VALUES ('$name', '$zip', '$state', '$country', '$city')";
 
 if (mysqli_query($link, $mysql)){
     echo "Records added successfully.";

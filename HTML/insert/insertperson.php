@@ -34,23 +34,18 @@ if ($link === false){
 }
 
 $table = $_POST['table'];
-setcookie('tablename', $table, time() + (86400 * 30), "/");
 echo "<p>Selected table is $table </p>";
 
-$title = $_POST['title'];
-$release_year = $_POST['release_year'];
-$length = $_POST['length'];
-$budget = $_POST['budget'];
-$lang = $_POST['language'];
-$description = $_POST['description'];
-$rating = $_POST['rating'];
-$revenue = $_POST['revenue'];
-$genre = implode(',', $_POST['genre']);
-$mpaa = $_POST['mpaa'];
-$studio = $_POST['studio'];
+$id = $_POST['id'];
+$l_name = $_POST['l_name'];
+$m_name = $_POST['m_name'];
+$f_name = $_POST['f_name'];
+$dob = $_POST['dob'];
+$nationality = $_POST['nationality'];
+$gender = $_POST['gender'];
 
-$mysql = "INSERT INTO Movie (title, release_year, length, budget, lang, description, rating, revenue, genre, mpaa, studio)
-VALUES ('$title', '$release_year', '$length', '$budget', '$lang', '$description', '$rating', '$revenue', '" . $genre . "', '$mpaa', '$studio')";
+$mysql = "INSERT INTO Person (id, l_name, m_name, f_name, dob, nationality, gender)
+VALUES ('$id', '$l_name', '$m_name', '$f_name', '$dob', '$nationality', '$gender')";
 
 if (mysqli_query($link, $mysql)){
     echo "Records added successfully.";
