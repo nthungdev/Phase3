@@ -6,7 +6,6 @@
 	<link rel="stylesheet" href="../stylesheet-mcu.css">
 </head>
 <body align="center">
-	<form action="search_next.php" method="post">
 	<picture>
 		<img src="../images/logo.png" alt="Marvel Cinematic Universe" style="width:500px;height:112px;">
 	</picture>
@@ -58,7 +57,6 @@ mysql_close($link);
 	</ul>
 	</fieldset>
 	<p><input type="submit" name="Insert" value="Next"></p>
-	</form>
 
 </body>
 </html>
