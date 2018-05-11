@@ -35,16 +35,6 @@ if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
 
-
-/*
-echo $_COOKIE['table'];
-$_COOKIE['table'] = $_POST['table'];
-
-
-$_COOKIE['value'] = "";
-echo $_COOKIE['value'];
-*/
-
 $table = $_POST['table'];
 setcookie('table', $table, time() + (86400 * 30), "/");
 
