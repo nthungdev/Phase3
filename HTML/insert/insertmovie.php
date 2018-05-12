@@ -25,12 +25,15 @@
 	<ul>
 
 <?php 
-$link = @mysqli_connect("localhost", "341group03", "1182E0", "db03");
+require "../php/mysqli_connect.php";
+/*
+$link = mysqli_connect("localhost", "capmarvel", "thanoswilldie", "mcu");
 mysqli_set_charset($link, 'utf8');
 
 if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
+*/
 
 $title = $_POST['title'];
 $release_year = $_POST['release_year'];
@@ -50,9 +53,9 @@ VALUES ('$title', '$release_year', '$length', '$budget', '$lang', '$description'
 if (mysqli_query($link, $mysql)){
     echo "Records added successfully.";
 }else{
-    echo "Error: Could not.." . mysql_error($link);
+    echo "Error: Could not.." . mysqli_error($link);
 }
-mysql_close($link);
+mysqli_close($link);
 
 ?>
 	</select></label></p>

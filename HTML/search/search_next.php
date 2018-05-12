@@ -28,16 +28,20 @@
 		
 
 <?php 
-$link = @mysqli_connect("localhost", "341group03", "1182E0", "db03");
+require "../php/mysqli_connect.php";
+/*
+$link = mysqli_connect("localhost", "capmarvel", "thanoswilldie", "mcu");
 mysqli_set_charset($link, 'utf8');
+
 if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
+*/
 $thistable = $_COOKIE['table'];
 $selected_value = $_POST[$thistable];
 
 //echo "<p>Value is {$selected_value} </p>";
-echo "<p>Selected table is {$thistable}</p>";
+//echo "<p>Selected table is {$thistable}</p>";
 
 switch ($thistable) {
 	case 'Movie':
@@ -47,7 +51,6 @@ switch ($thistable) {
 		$row = $result->fetch_assoc();
 		#echo "<p> {$selected_value} </p>";
 		
-		echo "<p> ${$row['title']}</p>";
 		echo "	<p>Title: {$row['title']} </p>
 			<p>Release Year: {$row['release_year']} </p>
 			<p>Length {$row['length']} </p>

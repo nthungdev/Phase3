@@ -25,14 +25,15 @@
 	<ul>
 
 <?php 
-$link = @mysqli_connect("localhost", "341group03", "1182E0", "db03");
+require "../php/mysqli_connect.php";
+/*
+$link = mysqli_connect("localhost", "capmarvel", "thanoswilldie", "mcu");
 mysqli_set_charset($link, 'utf8');
 
 if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
-
-
+*/
 $alias = $_POST['alias'];
 $sup_name = $_POST['sup_name'];
 $actor_id = $_POST['id'];
@@ -46,10 +47,10 @@ VALUES ('$alias', '$sup_name', '$actor_id', '$gender', '$species', '$ability')";
 if (mysqli_query($link, $mysql)){
     echo "Records added successfully.";
 }else{
-    echo "Error: Could not.." . mysql_error($link);
+    echo "Error: Could not.." . mysqli_error($link);
 	echo $mysql;
 }
-mysql_close($link);
+mysqli_close($link);
 
 ?>
 	</select></label></p>

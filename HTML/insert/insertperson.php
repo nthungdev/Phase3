@@ -25,12 +25,15 @@
 	<ul>
 
 <?php 
-$link = @mysqli_connect("localhost", "341group03", "1182E0", "db03");
+require "../php/mysqli_connect.php";
+/*
+$link = mysqli_connect("localhost", "capmarvel", "thanoswilldie", "mcu");
 mysqli_set_charset($link, 'utf8');
 
 if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
+*/
 
 $id = $_POST['id'];
 $l_name = $_POST['l_name'];
@@ -46,9 +49,9 @@ VALUES ('$id', '$l_name', '$m_name', '$f_name', '$dob', '$nationality', '$gender
 if (mysqli_query($link, $mysql)){
     echo "Records added successfully.";
 }else{
-    echo "Error: Could not.." . mysql_error($link);
+    echo "Error: Could not.." . mysqli_error($link);
 }
-mysql_close($link);
+mysqli_close($link);
 
 ?>
 	</select></label></p>

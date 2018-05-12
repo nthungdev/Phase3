@@ -6,15 +6,15 @@
 </head>
 <body>
 <?php 
-require('mysqli_connect.php');
-
-$link = @mysqli_connect("localhost", "341group03", "1182E0", "db03");
+require "../php/mysqli_connect.php";
+/*
+$link = mysqli_connect("localhost", "capmarvel", "thanoswilldie", "mcu");
 mysqli_set_charset($link, 'utf8');
-
 
 if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
+*/
 
 //$mysql = mysqli_query($dbc, 'INSERT INTO Movies VALUES(titl');
 /*
