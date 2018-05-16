@@ -1,11 +1,10 @@
 <?php
     $pin = $_POST['pin'];
     $password = '9999';
-    echo $pin;
 
     if ($pin == $password){
         echo "
-                <meta http-equiv='refresh' content='0; url=../nav_update.html'>
+            <meta http-equiv='refresh' content='0; url=../nav_update.html'>
         ";
     }
     
