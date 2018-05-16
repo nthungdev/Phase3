@@ -46,7 +46,6 @@ switch ($thistable) {
 				<p  align='center'><label>Title: <input type='text' name='title' size='20' placeholder='Ex: Iron Man 2' maxlength='255'></label></p>
 				<p  align='center'><label>Released Year:
 				<select  align='center' name='release_year'>
-					<option value=''>Keep old year</option>
 					<option value='2000'>2000</option> <option value='2001'>2001</option> <option value='2002'>2002</option>
 					<option value='2003'>2003</option> <option value='2004'>2004</option> <option value='2005'>2005</option>
 					<option value='2006'>2006</option> <option value='2007'>2007</option> <option value='2008'>2008</option>
@@ -63,7 +62,6 @@ switch ($thistable) {
 				<p  align='center'><label>Language: <input type='text' name='language' size='20' placeholder='Ex: English' maxlength='255'></label></p>
 				<p  align='center'><label for='genre'>Genre: 
 					</label>
-					<input type='checkbox' id='None' name='genre[]' value='None'> Keep old data
 					<input type='checkbox' id='Adventure' name='genre[]' value='Adventure'> Adventure
 					<input type='checkbox' id='Action' name='genre[]' value='Action'> Action
 					<input type='checkbox' id='Comedy' name='genre[]' value='Comedy'> Comedy
