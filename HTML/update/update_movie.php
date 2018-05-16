@@ -63,8 +63,134 @@ function updateYear($link, $year) {
 
 	echo $mysql;
 
-	if (mysqli_query($link, $mysql)){
+	if (mysqli_query($link, $mysql)) {
 		echo "Records updated successfully.";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updateStudio($link, $studio) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	studio = '{$studio}'
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.\n";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updateLength($link, $length) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	length = {$length}
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.\n";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updateBudget($link, $budget) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	budget = {$budget}
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.\n";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updateLanguage($link, $lang) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	lang = '{$lang}'
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.\n";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updateDescription($link, $description) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	description = '{$description}'
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.\n";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updateRating($link, $rating) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	rating = {$rating}
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.\n";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updateRevenue($link, $revenue) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	revenue = {$revenue}
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.\n";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updatempaa($link, $mpaa) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	mpaa = '{$mpaa}'
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.\n";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updateGenre($link, $genre) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	genre = '{$genre}'
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.\n";
 	}else{
 		echo "Error: Could not.." . mysqli_error($link);
 	}
@@ -84,6 +210,15 @@ echo "
 */
 
 updateYear($link, $release_year);
+updateStudio($link, $studio);
+updateLength($link, $length);
+updateBudget($link, $budget);
+updateDescription($link, $description);
+updateLanguage($link, $lang);
+updateRating($link, $rating);
+updatempaa($link, $mpaa);
+updateRevenue($link, $revenue);
+updateGenre($link, $genre);
 updateTitle($link, $title);
 
 /*
