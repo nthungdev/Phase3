@@ -4,12 +4,8 @@
     echo $pin;
 
     if ($pin == $password){
-        echo "Validation successful!";
         echo "
-            <br>
-            <form action='../nav_update.html'>
-                <input type='submit' value='Go to UPDATE' />
-            </form>
+                <meta http-equiv='refresh' content='0; url=../nav_update.html'>
         ";
     }
     

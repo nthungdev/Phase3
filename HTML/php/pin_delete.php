@@ -4,12 +4,8 @@
     echo $pin;
 
     if ($pin == $password){
-        echo "Validation successful!";
         echo "
-            <br>
-            <form action='../nav_delete.html'>
-                <input type='submit' value='Go to DELETE' />
-            </form>
+            <meta http-equiv='refresh' content='0; url=../nav_delete.html'>
         ";
     }
     

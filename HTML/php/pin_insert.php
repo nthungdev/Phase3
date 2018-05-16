@@ -5,10 +5,7 @@
     if ($pin == $password){
         echo "
             <br>
-            <form action='../nav_insert.html'>
-                <meta http-equiv='refresh' content='0; url=../nav_insert.html'>
-                
-            </form>
+            <meta http-equiv='refresh' content='0; url=../nav_insert.html'>
         ";
     }
     # <input type='submit' value='Go to INSERT' />
