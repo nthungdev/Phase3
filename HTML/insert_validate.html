@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Marvel Cinematic Universe</title>
+	<link rel="stylesheet" href="stylesheet-mcu.css">
+</head>
+
+<body>
+	<img src="images/logo.png" alt="Marvel Cinematic Universe" class="center" style="width:500px;height:112px;">
+	<hr>
+	<div id="nav">
+	<ul>
+		<li id="here"><a href="index.html">Marvel Cinematic Universe</a></li>
+		<li><a href="nav_search.html">Search</a></li>
+		<li><a href="insert_validate.html">Insert</a></li>
+		<li><a href="update_validate.html">Update</a></li>
+		<li><a href="delete_validate.html">Delete</a></li>
+	</ul>
+	</div>
+	<hr>
+	<fieldset align="center">
+        <form action="php/pin_insert.php" method="post">
+            <p>Enter PIN code to coninue</p>
+                <input type="text" name="pin" placeholder="4 digits" pattern="[0-9]{4}" maxlength="4">
+                <input type="submit" value="Validate">
+            </form>
+	</fieldset>
+
+</body>
+</html>
