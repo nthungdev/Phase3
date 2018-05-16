@@ -30,14 +30,7 @@
 
 <?php 
 require "../php/mysqli_connect.php";
-/*
-$link = mysqli_connect("localhost", "capmarvel", "thanoswilldie", "mcu");
-mysqli_set_charset($link, 'utf8');
 
-if ($link === false){
-	die("ERROR: Could not connect" . mysqli_connect_error());
-}
-*/
 $thistable = $_COOKIE['table'];
 $selected_value = $_POST[$thistable];
 
@@ -45,75 +38,137 @@ $selected_value = $_POST[$thistable];
 switch ($thistable) {
 	case 'Movie':
 		$query = "SELECT * FROM Movie WHERE title = '{$selected_value}'";
-		#echo $query;
 		$result = $link->query($query);
 		$row = $result->fetch_assoc();
-		#echo "<p> {$selected_value} </p>";
-		
-		echo "	<p>Title: {$row['title']} </p>
-			<p>Release Year: {$row['release_year']} </p>
-			<p>Length {$row['length']} </p>
-			<p>Budget: {$row['budget']} </p>
-			<p>Language: {$row['lang']} </p>
-			<p>Description:  {$row['description']} </p>
-			<p>Rating: {$row['rating']} </p>
-			<p>Revenue: {$row['revenue']} </p>
-			<p>Genre: {$row['genre']} </p>
-			<p>MPAA: {$row['mpaa']}  </p>
-			<p>Studio: {$row['studio']} </p>";
+
+		echo "
+			<table style = 'width:100%'>
+				<tr>
+					<td>Title</td>
+					<td>{$row['title']}</td>
+				</tr>
+					<td>Release Year</td>
+					<td>{$row['release_year']}</td>
+				</tr>
+					<td>Length</td>
+					<td>{$row['length']}</td>
+				</tr>
+					<td>Budget</td>
+					<td>{$row['budget']}</td>
+				</tr>
+					<td>Revenue</td>
+					<td>{$row['revenue']}</td>
+				</tr>
+					<td>Language</td>
+					<td>{$row['lang']}</td>
+				</tr>
+					<td>Rating</td>
+					<td>{$row['rating']}</td>
+				</tr>
+					<td>Genre</td>
+					<td>{$row['genre']}</td>
+				</tr>
+					<td>MPAA</td>
+					<td>{$row['mpaa']}</td>
+				</tr>
+					<td>Studio</td>
+					<td>{$row['studio']}</td>
+				</tr>
+					<td>Description</td>
+					<td>{$row['description']}</td>
+				</tr>
+				";
 		break;
 
 	case 'Person':
 		$query = "SELECT * FROM Person WHERE id = '{$selected_value}'";
-		#echo $query;
 		$result = $link->query($query);
 		$row = $result->fetch_assoc();
-		#echo "<p> {$selected_value} </p>";
 		
-		echo "	<p>ID: {$row['id']} </p>
-			<p>Last Name: {$row['l_name']} </p>
-			<p>Middle Name {$row['m_name']} </p>
-			<p>First Name: {$row['f_name']} </p>
-			<p>Date of Birth: {$row['dob']} </p>
-			<p>Nationality:  {$row['nationality']} </p>
-			<p>Gender: {$row['gender']} </p>";
+		echo "
+			<table style = 'width:100%'>
+				<tr>
+					<td>ID</td>
+					<td>{$row['id']}</td>
+				</tr>
+					<td>Last Name</td>
+					<td>{$row['l_name']}</td>
+				</tr>
+					<td>Middle Name</td>
+					<td>{$row['m_name']}</td>
+				</tr>
+					<td>First Name</td>
+					<td>{$row['f_name']}</td>
+				</tr>
+					<td>Date of Birth</td>
+					<td>{$row['dob']}</td>
+				</tr>
+					<td>Nationality</td>
+					<td>{$row['nationality']}</td>
+				</tr>
+					<td>Gender</td>
+					<td>{$row['gender']}</td>
+				</tr>
+				";
 		break;
 
 	case 'Location':
 		$query = "SELECT * FROM Location WHERE loc_name = '{$selected_value}'";
-		#echo $query;
 		$result = $link->query($query);
 		$row = $result->fetch_assoc();
-		#echo "<p> {$selected_value} </p>";
 		
-		echo "	<p>Name: {$row['loc_name']} </p>
-			<p>Zip: {$row['zip']} </p>
-			<p>State/Province: {$row['state']} </p>
-			<p>Country: {$row['country']} </p>
-			<p>City: {$row['city']} </p>";
+		echo "
+		<table style = 'width:100%'>
+			<tr>
+				<td>Name</td>
+				<td>{$row['loc_name']}</td>
+			</tr>
+				<td>State/Province</td>
+				<td>{$row['state']}</td>
+			</tr>
+				<td>City</td>
+				<td>{$row['city']}</td>
+			</tr>
+				<td>Country</td>
+				<td>{$row['country']}</td>
+			</tr>				
+				<td>Zip</td>
+				<td>{$row['zip']}</td>
+			</tr>
+		";
+
 		break;
 
 	case 'Superhero':
 		$query = "SELECT * FROM Superhero WHERE alias = '{$selected_value}'";
-		#echo $query;
 		$result = $link->query($query);
 		$row = $result->fetch_assoc();
-		#echo "<p> {$selected_value} </p>";
 		
-		echo "	<p>Alias: {$row['alias']} </p>
-			<p>Real Name: {$row['sup_name']} </p>
-			<p>Actor ID: {$row['actor_id']} </p>
-			<p>Gender: {$row['gender']} </p>
-			<p>Species: {$row['species']} </p>
-			<p>Ability:  {$row['ability']} </p>";
+		echo "
+		<table style = 'width:100%'>
+			<tr>
+				<td>Alias</td>
+				<td>{$row['alias']}</td>
+			</tr>
+				<td>Real Name</td>
+				<td>{$row['sup_name']}</td>
+			</tr>
+				<td>Gender</td>
+				<td>{$row['gender']}</td>
+			</tr>
+				<td>Species</td>
+				<td>{$row['species']}</td>
+			</tr>
+				<td>Ability</td>
+				<td>{$row['ability']}</td>
+			</tr>
+			";
 		break;
 
 	case 'Theme':
 		$query = "SELECT * FROM Theme WHERE track_name = '{$selected_value}'";
-		#echo $query;
 		$result = $link->query($query);
 		$row = $result->fetch_assoc();
-		#echo "<p> {$selected_value} </p>";
 		
 		echo "	
 		<table style = 'width:100%'>
@@ -121,11 +176,11 @@ switch ($thistable) {
 				<td>Track Name</td> 
 				<td>{$row['track_name']}</td>
 			</tr>
-				<td>Release Year</td> 
-				<td>{$row['release_year']}</td>
-			</tr>
 				<td>No.</td> 
 				<td>{$row['num']}</td>
+			</tr>
+				<td>Release Year</td> 
+				<td>{$row['release_year']}</td>
 			</tr>
 				<td>Composer</td> 
 				<td>{$row['composer']}</td>
