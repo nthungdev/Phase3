@@ -14,9 +14,9 @@
 	<div id="nav">
 	<ul>
 		<li><a href="../index.html">Marvel Cinematic Universe</a></li>
-		<li id="here"><a href="../nav_search.html">Search</a></li>
+		<li><a href="../nav_search.html">Search</a></li>
 		<li><a href="../nav_insert.html">Insert</a></li>
-		<li><a href="../nav_update.html">Update</a></li>
+		<li id="here"><a href="../nav_update.html">Update</a></li>
 		<li><a href="../nav_delete.html">Delete</a></li>
 	</ul>
 	</div>
@@ -25,20 +25,20 @@
 	<div id="left">
 	<ul>
 
-		
-
 <?php 
-$link = @mysqli_connect("localhost", "341group03", "1182E0", "db03");
+require "../php/mysqli_connect.php";
+/*
+$link = mysqli_connect("localhost", "capmarvel", "thanoswilldie", "mcu");
 mysqli_set_charset($link, 'utf8');
 
 if ($link === false){
 	die("ERROR: Could not connect" . mysqli_connect_error());
 }
-
+*/
 $table = $_POST['table'];
 setcookie('table', $table, time() + (86400 * 30), "/");
 
-echo "<p>Selected table is $table </p>";
+//echo "<p>Selected table is $table </p>";
 
 switch ($table) {
 	case 'Movie':

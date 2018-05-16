@@ -40,8 +40,6 @@ if ($link === false){
 $thistable = $_COOKIE['table'];
 $selected_value = $_POST[$thistable];
 
-//echo "<p>Value is {$selected_value} </p>";
-//echo "<p>Selected table is {$thistable}</p>";
 
 switch ($thistable) {
 	case 'Movie':

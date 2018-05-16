@@ -40,34 +40,32 @@ if ($link === false){
 $thistable = $_COOKIE['table'];
 $selected_value = $_POST[$thistable];
 
-echo "<p>Selected table is {$thistable}</p>";
-
 switch ($thistable) {
 	case 'Movie':
 		$query = "DELETE FROM Movie WHERE title = '$selected_value'";
 		$result = $link->query($query);
-		echo "Delete Successful";
+		echo "Delete Successfully";
 	
 		break;
 
 	case 'Person':
 		$query = "DELETE FROM Person WHERE id = '$selected_value'";
 		$result = $link->query($query);
-		echo "Delete Successful";;
+		echo "Delete Successfully";;
 
 		break;
 
 	case 'Location':
 		$query = "DELETE FROM Location WHERE loc_name = '$selected_value'";
 		$result = $link->query($query);
-		echo "Delete Successful";
+		echo "Delete Successfully";
 
 		break;
 
 	case 'Superhero':
 		$query = "DELETE FROM Superhero WHERE alias = '$selected_value'";
 		$result = $link->query($query);
-		echo "Delete Successful";
+		echo "Delete Successfully";
 
 		break;
 

@@ -14,8 +14,8 @@
 	<ul>
 		<li><a href="../index.html">Marvel Cinematic Universe</a></li>
 		<li><a href="../nav_search.html">Search</a></li>
-		<li id="here"><a href="../nav_insert.html">Insert</a></li>
-		<li><a href="../nav_update.html">Update</a></li>
+		<li><a href="../nav_insert.html">Insert</a></li>
+		<li id="here"><a href="../nav_update.html">Update</a></li>
 		<li><a href="../nav_delete.html">Delete</a></li>
 	</ul>
 	</div>
@@ -39,15 +39,61 @@ $genre = implode(',', $_POST['genre']);
 $mpaa = $_POST['mpaa'];
 $studio = $_POST['studio'];
 
-$mysql = "INSERT INTO Movie (title, release_year, length, budget, lang, description, rating, revenue, genre, mpaa, studio)
-VALUES ('$title', '$release_year', '$length', '$budget', '$lang', '$description', '$rating', '$revenue', '" . $genre . "', '$mpaa', '$studio')";
 
+function updateTitle($link, $title) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	title = '{$title}'
+				WHERE title = '{$table_value}'
+			 ";
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+function updateYear($link, $year) {
+	$table_value = $_COOKIE['table_value'];
+	$mysql = "	UPDATE Movie
+				SET	release_year = '{$year}'
+				WHERE title = '{$table_value}'
+			 ";
+
+	echo $mysql;
+
+	if (mysqli_query($link, $mysql)){
+		echo "Records updated successfully.";
+	}else{
+		echo "Error: Could not.." . mysqli_error($link);
+	}
+}
+
+/*
+echo "
+	<br>
+	<button onclick='goBack()'>Go Back</button>
+
+	<script>
+	function goBack() {
+		window.history.back();
+	}
+	</script>
+";
+*/
+
+updateYear($link, $release_year);
+updateTitle($link, $title);
+
+/*
 if (mysqli_query($link, $mysql)){
     echo "Records added successfully.";
 }else{
     echo "Error: Could not.." . mysqli_error($link);
 }
 mysqli_close($link);
+*/
 
 ?>
 	</select></label></p>
