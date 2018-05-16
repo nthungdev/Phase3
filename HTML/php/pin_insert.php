@@ -1,18 +1,17 @@
 <?php
     $pin = $_POST['pin'];
     $password = '9999';
-    echo $pin;
 
     if ($pin == $password){
-        echo "Validation successful!";
         echo "
             <br>
             <form action='../nav_insert.html'>
-                <input type='submit' value='Go to INSERT' />
+                <meta http-equiv='refresh' content='0; url=../nav_insert.html'>
+                
             </form>
         ";
     }
-    
+    # <input type='submit' value='Go to INSERT' />
     else {
         echo "Incorrect PIN code! Please try again!";
         echo "
