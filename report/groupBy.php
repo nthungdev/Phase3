@@ -44,6 +44,11 @@ $genre = $_POST['genre'];
 $mpaa = $_POST['mpaa'];
 $studio = $_POST['studio'];
 
+SELECT COUNT(id), movie_title 
+FROM Position
+WHERE id NOT LIKE 'A0%'
+GROUP BY movie_title;
+
 SELECT title, revenue AVG  FROM Movie m WHERE m.revenue > (SELECT Avg(revenue) FROM Movie);
 SELECT id, movie_title From Position WHERE id LIKE 'A%' ORDER BY id;
 
