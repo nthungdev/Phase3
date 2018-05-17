@@ -102,4 +102,17 @@ margin-left:auto;
 margin-right: auto;
 }
 
+.row {
+  display: flex;
+  margin-left:15px;
+}
 
+.column {
+  flex: 32%;
+  padding: 5px;
+}
+
+.figc {
+    display: block;
+    text-align: center
+}
