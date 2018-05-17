@@ -128,7 +128,7 @@ switch ($table) {
 		<hr>
 	</ul>
 	</fieldset>
-	<p><input type="submit" name="submit" value="Next"></p>
+	<p><input type="submit" name="submit" class="center" value="Next"></p>
 	</form>
 
 </body>
