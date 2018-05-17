@@ -8,7 +8,7 @@
 define('DB_USER', 'capmarvel');
 define('DB_PASSWORD', 'thanoswilldie');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'mcu');
+define('DB_NAME', 'mcu3');
 
 
 // Make the connection:

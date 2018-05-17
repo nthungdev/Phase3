@@ -19,7 +19,7 @@
 			<li><a href="../nav_insert.html">Insert</a></li>
 			<li id="here"><a href="../nav_update.html">Update</a></li>
 			<li><a href="../nav_delete.html">Delete</a></li>
-		<li><a href="nav_report.html">Report</a></li>
+		<li><a href="../nav_report.html">Report</a></li>
 		</ul>
 	</div>
 	<hr>
@@ -63,7 +63,7 @@ switch ($thistable) {
 				<p  align='center'><label>Language: <input type='text' name='language' size='20' placeholder='Ex: English' maxlength='255'></label></p>
 				<p  align='center'><label for='genre'>Genre: 
 					</label>
-					<input type='checkbox' id='None' name='genre[]' value='None'> Keep old data
+					<input type='checkbox' id='None' name='genre[]' value=''> Keep old genre
 					<input type='checkbox' id='Adventure' name='genre[]' value='Adventure'> Adventure
 					<input type='checkbox' id='Action' name='genre[]' value='Action'> Action
 					<input type='checkbox' id='Comedy' name='genre[]' value='Comedy'> Comedy
@@ -74,6 +74,7 @@ switch ($thistable) {
 					<input type='checkbox' id='Thriller' name='genre[]' value='Thriller'> Thriller</p>
 				<p  align='center'><label for='mpaa'>MPAA: 
 					</label>
+					<input type='radio' name='mpaa' value=''> Keep old MPAA
 					<input type='radio' name='mpaa' value='PG'> PG
 					<input type='radio' name='mpaa' value='PG-13'> PG-13 
 					<input type='radio' name='mpaa' value='G'> G
