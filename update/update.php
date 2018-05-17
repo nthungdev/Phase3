@@ -23,6 +23,7 @@
 	</div>
 	<hr>
 	<fieldset align="center">
+	<legend align="center">UPDATING...</legend>
 	<div id="left">
 	<ul>
 
@@ -126,7 +127,7 @@ switch ($table) {
 		<hr>
 	</ul>
 	</fieldset>
-	<p><input type="submit" name="submit" value="Next"></p>
+	<p><input type="submit" name="submit" class="center" value="Next"></p>
 	</form>
 
 </body>

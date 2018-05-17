@@ -14,10 +14,10 @@
 	<div id="nav">
 	<ul>
 		<li><a href="../index.html">Marvel Cinematic Universe</a></li>
-		<li id="here"><a href="../nav_search.html">Search</a></li>
+		<li><a href="../nav_search.html">Search</a></li>
 		<li><a href="../nav_insert.html">Insert</a></li>
 		<li><a href="../nav_update.html">Update</a></li>
-		<li><a href="../nav_delete.html">Delete</a></li>
+		<li id="here"><a href="../nav_delete.html">Delete</a></li>
 		<li><a href="nav_report.html">Report</a></li>
 	</ul>
 	</div>
@@ -128,7 +128,7 @@ switch ($table) {
 		<hr>
 	</ul>
 	</fieldset>
-	<p><input type="submit" name="submit" value="Next"></p>
+	<p><input type="submit" name="submit" class="center" value="Next"></p>
 	</form>
 
 </body>
