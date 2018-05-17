@@ -29,17 +29,19 @@
 <?php 
 require "../php/mysqli_connect.php";
 
-$query0 = "SELECT avg(revenue) as avg FROM Movie";
-$query1 = "SELECT title, revenue FROM Movie WHERE revenue > (SELECT avg(revenue) FROM Movie)";
+$num_query = "SELECT count(title) as count from Movie WHERE revenue > (SELECT avg(revenue) FROM Movie)";
+$result0 = $link->query($num_query);
+$row = $result0->fetch_assoc();
+echo "<p>Number of Movies with revenue higher than the average: " . $row['count'] . "</p> <br> <br>";
 
-
-$result = $link->query($query0);
+$avg_query = "SELECT avg(revenue) as avg FROM Movie";
+$result = $link->query($avg_query);
 $row = $result->fetch_assoc();
 $avg_revenue = $row['avg'];
-
-$result = $link->query($query1);
-
 echo "The average revenue is " . round($avg_revenue, 0) . "<br> <br>";
+
+$movie_query = "SELECT title, revenue FROM Movie WHERE revenue > (SELECT avg(revenue) FROM Movie)";
+$result = $link->query($movie_query);
 echo "<p>These are the movies with revenue higher than the average revenue: </p> <br> <br>";
 
 if ($result) {
@@ -47,9 +49,13 @@ if ($result) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
             echo $row['title'] . " | $" . $row['revenue'] . "<br>";
+
+            $movie_title = $row['title'];
     
             $actor_query = "select l_name, f_name, movie_title from Position p1, Person p2
-            where p1.movie_title = '{$row['title']}' and p1.id like 'A0%' and p1.id = p2.id";
+            where p1.movie_title = \"$movie_title\" and p1.id like 'A0%' and p1.id = p2.id";
+
+            #echo $actor_query . "<br>";
             
             $result2 = $link->query($actor_query);
             if ($result2){
@@ -57,7 +63,6 @@ if ($result) {
                     while($row2 = $result2->fetch_assoc()) {
                         echo "Cast: " . $row2['f_name'] . " " . $row2['l_name'] . "<br>";
                     }
-                    echo "<br>";
                 }
                 else {
                     echo "No actors enrolled in this movie!?";
@@ -66,6 +71,29 @@ if ($result) {
             }
             else {
                 echo "No actors enrolled in this movie!?";
+                echo "<br> <br>";
+            }
+
+            $crew_query = "SELECT COUNT(id) as Count, movie_title 
+            FROM Position
+            WHERE id NOT LIKE 'A0%' AND movie_title = '{$row['title']}'
+            GROUP BY movie_title";
+            
+            $result3 = $link->query($crew_query);
+            if ($result3){
+                if ($result3->num_rows > 0) {
+                    while($row3 = $result3->fetch_assoc()) {
+                        echo "Number of Crews: " . $row3['Count'] . "<br>";
+                    }
+                    echo "<br>";
+                }
+                else {
+                    echo "No crew enrolled in this movie!?";
+                    echo "<br> <br>";
+                }
+            }
+            else {
+                echo "No crew enrolled in this movie!?";
                 echo "<br> <br>";
             }
         }
