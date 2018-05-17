@@ -18,7 +18,7 @@
 		<li><a href="../insert_validate.html">Insert</a></li>
 		<li><a href="../update_validate.html">Update</a></li>
 		<li><a href="../delete_validate.html">Delete</a></li>
-		<li><a href="nav_report.html">Report</a></li>
+		<li><a href="../nav_report.html">Report</a></li>
 	</ul>
 	</div>
 	<hr>

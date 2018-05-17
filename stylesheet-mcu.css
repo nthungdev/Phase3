@@ -102,4 +102,12 @@ margin-left:auto;
 margin-right: auto;
 }
 
+.row {
+  display: flex;
+  margin-left:10px;
+}
 
+.column {
+  flex: 32%;
+  padding: 5px;
+}
