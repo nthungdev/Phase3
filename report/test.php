@@ -29,15 +29,35 @@
 <?php 
 require "../php/mysqli_connect.php";
 
-$query1 = "SELECT title, release_year from Movie where revenue > avg(revenue)";
-$query1 = "SELECT * from Movie";
+$query0 = "SELECT avg(revenue) as avg FROM Movie";
+$query1 = "SELECT title, revenue FROM Movie WHERE revenue > (SELECT avg(revenue) FROM Movie)";
+
+
+$result = $link->query($query0);
+$row = $result->fetch_assoc();
+$avg_revenue = $row['avg'];
 
 $result = $link->query($query1);
 
-if ($result->num_rows > 0) {
+echo "The average revenue is " . round($avg_revenue, 0) . "<br> <br>";
+
+if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "title: " . $row['title'];
+        echo "Title: " . $row['title'] . " | Revenue: " . $row['revenue'] . "<br>";
+
+        $actor_query = "select l_name, f_name, movie_title from Position p1, Person p2
+        where p1.movie_title = '{$row['title']}' and p1.id like 'A0%' and p1.id = p2.id";
+        
+        $result2 = $link->query($actor_query);
+        if ($result2->num_rows > 0) {
+            while($row2 = $result2->fetch_assoc()) {
+                echo "Actor: " . $row2['f_name'] . "<br>";
+            }
+        }
+        
+        
+
     }
 } else {
     echo "0 results";
