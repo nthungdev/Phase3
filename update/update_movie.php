@@ -170,7 +170,7 @@ function updateDescription($link, $description) {
 				";
 
 		if (mysqli_query($link, $mysql)){
-			echo "Description updated successfully.\n";
+			echo "Description updated successfully.\n <br>";
 		}else{
 			echo "Error: Could not.." . mysqli_error($link);
 		}
@@ -291,8 +291,10 @@ mysqli_close($link);
 	</select></label></p>
 		<hr>
 	</ul>
+	<form action='../index.html'>
+		<input type='submit' value='Go to Main Page' />
+	</form>
 	</fieldset>
-	<p><input type="submit" name="Insert" value="Next"></p>
 
 </body>
 </html>

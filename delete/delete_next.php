@@ -79,8 +79,11 @@ switch ($thistable) {
 }
 
 ?>
-
+	
 	</ul>
+	<form action='../index.html'>
+		<input type='submit' value='Go to Main Page' />
+	</form>
 	</fieldset>
 
 

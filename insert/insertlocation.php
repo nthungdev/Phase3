@@ -56,8 +56,11 @@ mysql_close($link);
 	</select></label></p>
 		<hr>
 	</ul>
+	<form action='../index.html'>
+		<input type='submit' value='Go to Main Page' />
+	</form>
 	</fieldset>
-	<p><input type="submit" name="Insert" value="Next"></p>
+	
 
 </body>
 </html>

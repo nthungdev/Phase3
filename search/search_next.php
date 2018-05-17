@@ -78,6 +78,8 @@ switch ($thistable) {
 					<td>{$row['description']}</td>
 				</tr>
 				";
+
+		
 		break;
 
 	case 'Person':
@@ -198,9 +200,12 @@ switch ($thistable) {
 ?>
 
 	</ul>
+	
 	</fieldset>
 
-
+	<form action='../index.html'>
+		<input type='submit' value='Go to Main Page' />
+	</form>
 </body>
 </html>
 
