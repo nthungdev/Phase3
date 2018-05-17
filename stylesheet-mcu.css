@@ -4,8 +4,14 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center; 
 background-color: #F4F4F4;
-background-size: 100% 100%;
+background-size: 115% 115%;
 color: #952E4B;
+
+}
+
+fieldset {
+width: 55%;
+margin-left: 295px;
 }
 
 label {
@@ -33,9 +39,11 @@ font-weight: bold;
 color: #952E4B;
 }
 
+hr{
+width: 65%;
+}
+
 #nav{
-border:1px solid #ccc;
-border-width:1px 0;
 margin:0;
 padding:0;
 text-align:center;
@@ -48,8 +56,9 @@ width: 960px;
 }
 
 #nav li{
-    display:inline;
+display:inline;
 }
+
 
 #nav a{
 text-transform: uppercase;
@@ -60,6 +69,7 @@ z-index: +5;
 color: #C40018;
 font-size: 1.2em;
 text-shadow: 2px 2px 5px #000;
+text-decoration: inherit;
 }
 
 #left {
